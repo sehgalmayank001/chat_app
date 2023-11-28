@@ -1,0 +1,8 @@
+.row
+  .col-2
+    - if message.messager_type == 'user'
+      you
+    - else 
+      = profile.name
+  .col-10
+    = simple_format message.body

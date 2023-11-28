@@ -1,0 +1,11 @@
+.container-fluid
+  .row
+    .col-4
+      %h1= @profile.name
+      %turbo-frame#current-conversation
+        = render 'messages/form', conversation: @conversation
+
+        = turbo_stream_from "#{dom_id(@conversation)}_messages"
+        .container-fluid.vh-75{:id => dom_id(@conversation)}
+          .h-100{:id => "#{dom_id(@conversation)}_messages"}
+            = render @messages, profile: @profile

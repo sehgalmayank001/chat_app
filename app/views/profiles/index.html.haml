@@ -1,0 +1,42 @@
+%h1 Profiles
+
+%h5 Filters
+.container-fluid
+  = search_form_for @search, url: profiles_path, method: :get, html: { class: 'filters-form form' } do |f|
+    .row
+      .col-1
+        %label
+          Gender
+          = @search.gender_eq
+          = f.select :gender_eq,  Profile.genders.to_a.map { |w| [w[0], w[1]] }, {:include_blank => true}, class: 'filter-select form-control'
+      .col-1
+        %label
+          Category:
+          = f.select :category_eq, Profile.categories.to_a.map { |w| [w[0], w[1]] }, {:include_blank => true}, class: 'filter-select form-control'
+      .col-1.mt-auto
+        = f.submit 'Apply Filters', class: 'filter-submit btn btn-primary'
+    .row.mt-2
+      .col-2
+        = link_to profiles_path, class: 'clear-filter btn btn-secondary btn-sm', data: { filter: 'gender' } do
+          Clear Filters
+    %br
+    %br
+
+  %div= paginate @profiles
+
+  %table.table
+    %thead
+      %tr
+        %th{:scope => "col"} Name
+        %th{:scope => "col"} Gender
+        %th{:scope => "col"} Category
+        %th{:scope => "col"} Chat
+    %tbody 
+      - @profiles.each do |profile|
+        %tr
+          %td= profile.name
+          %td= profile.gender
+          %td= profile.category
+          %td= link_to 'Chat with profile', conversation_profile_path(profile)
+
+  %div.mb-3= paginate @profiles
