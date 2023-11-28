@@ -14,19 +14,16 @@ Server.create([
   { name: 'server-2', url: 'http://34.36.42.74/api/v1/chat' }
 ])
 
-if Rails.env.development?
+profiles = []
+genders = Profile.genders.keys
+categories = Profile.categories.keys
 
-  profiles = []
-  genders = Profile.genders.keys
-  categories = Profile.categories.keys
-
-  100000.times do |variable|
-    profiles << {
-      name: Faker::Name.name,
-      gender: genders.sample,
-      category: categories.sample
-    }
-  end
-
-  Profile.insert_all(profiles)
+100000.times do |variable|
+  profiles << {
+    name: Faker::Name.name,
+    gender: genders.sample,
+    category: categories.sample
+  }
 end
+
+Profile.insert_all(profiles)
