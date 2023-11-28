@@ -47,6 +47,8 @@ gem 'ransack'
 gem 'cssbundling-rails'
 gem "haml-rails", "~> 2.0"
 gem 'html2haml'
+gem 'faker'
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -57,7 +59,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
-  gem 'faker'
 
   gem 'rubocop-rails', require: false
   gem 'rubocop-performance', require: false
