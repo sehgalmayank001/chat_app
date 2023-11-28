@@ -11,9 +11,10 @@ RSpec.describe LoadbalancerService do
 
   context 'when we call loadbalancer iteratively' do
     it 'cycles through servers in a cyclical manner' do
-      expect(described_class.call).to eq('http://server-1-url.com')
-      expect(described_class.call).to eq('http://server-2-url.com')
-      expect(described_class.call).to eq('http://server-1-url.com')
+      100.times do |i|
+        server_number = (i%2 != 0 ? 2 : 1)
+        expect(described_class.call).to eq("http://server-#{server_number}-url.com")
+      end
     end
   end
 end

@@ -52,7 +52,7 @@ class ChatResponseService
     end
 
     def get_response(payload, conversation)
-      url = URI.parse('http://34.36.42.74/api/v1/chat')
+      url = URI.parse(get_server_url)
       http = Net::HTTP.new(url.host, url.port)
       request = Net::HTTP::Post.new(url.path, {'Content-Type' => 'application/json'})
       request.body = payload.to_json
@@ -69,6 +69,10 @@ class ChatResponseService
       else
         puts "Error: #{response.code} - #{response.message}"
       end
+    end
+
+    def get_server_url
+      LoadbalancerService.call
     end
   end
 end

@@ -14,7 +14,7 @@ class Message < ApplicationRecord
     broadcast_prepend_to(
       "#{dom_id(conversation)}_messages",
       partial: 'messages/message',
-      locals: { message: self, scroll_to: true, profile:  },
+      locals: { message: self, scroll_to: true, profile: profile },
       target: "#{dom_id(conversation)}_messages"
     )
   end
