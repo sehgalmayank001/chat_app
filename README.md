@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+. create a folder called popup_projects, clone popup_library
+1. This app depends on Postgres, redis, ruby-3.22, rails 7. Ensure all are installed
+2. Install gems
+    ```
+    bundle install
+    ```
+3. Create database and seed it
+    ```
+    rails db:create db:migrate db:seed
+    ```
+4. start the app
+    ```
+    foreman start -f Procfile.dev
+    ```
+5. Navigate to http://localhost:5000
