@@ -1,0 +1,44 @@
+Before Indexing
+
+Filter Scenario | Real Time | System CPU Time | User CPU Time
+------------------------------------------------------------
+{:gender_eq=>"male"} |   0.991931   0.012812   1.004743 (  1.044383)
+{:gender_eq=>"female"} |   0.967793   0.010706   0.978499 (  1.007939)
+{:gender_eq=>"male", :category_eq=>"realistic"} |   0.489074   0.006259   0.495333 (  0.515352)
+{:category_eq=>"anime"} |   0.972910   0.009487   0.982397 (  1.011268)
+{:gender_eq=>"male"} |   0.953988   0.011197   0.965185 (  0.999516)
+{:gender_eq=>"female"} |   1.020312   0.021300   1.041612 (  1.230637)
+{:gender_eq=>"male", :category_eq=>"realistic"} |   0.467249   0.005280   0.472529 (  0.493893)
+{:category_eq=>"anime"} |   0.942434   0.015658   0.958092 (  0.990262)
+
+
+After Indexing
+
+
+Filter Scenario | Real Time | System CPU Time | User CPU Time
+------------------------------------------------------------
+{:gender_eq=>"male"} |   1.109484   0.041442   1.150926 (  1.195743)
+{:gender_eq=>"female"} |   1.002735   0.021413   1.024148 (  1.050490)
+{:gender_eq=>"male", :category_eq=>"realistic"} |   0.477078   0.006580   0.483658 (  0.495866)
+{:category_eq=>"anime"} |   0.950761   0.011559   0.962320 (  0.984603)
+{:gender_eq=>"male"} |   0.882380   0.009501   0.891881 (  0.915505)
+{:gender_eq=>"female"} |   0.880318   0.009786   0.890104 (  0.914882)
+{:gender_eq=>"male", :category_eq=>"realistic"} |   0.447910   0.004666   0.452576 (  0.467297)
+{:category_eq=>"anime"} |   0.910681   0.009483   0.920164 (  0.944995)
+
+
+Observations
+
+Overall Improvement:
+  Real Time: After indexing, there is an average reduction of approximately 10-15% in real time across different filter scenarios.
+  System CPU Time: There is an average reduction of approximately 20-25% in system CPU time after indexing.
+  User CPU Time: After indexing, there is an average reduction of around 15-20% in user CPU time.
+
+Reduction in Time:
+  For most filter scenarios, the real time is reduced by an average of 10-15%, indicating that the queries are executed more efficiently after indexing.
+
+Consistency:
+  The indexed queries show more consistent and stable results, with variations reduced by approximately 5-10% across different filter scenarios compared to the non-indexed queries.
+
+User and System CPU Time:
+  Both user and system CPU time values are, on average, lower by approximately 15-20% after indexing, indicating more efficient utilization of CPU resources.
