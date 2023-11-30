@@ -17,14 +17,15 @@ After Indexing
 
 Filter Scenario | Real Time | System CPU Time | User CPU Time
 ------------------------------------------------------------
-{:gender_eq=>"male"} |   1.109484   0.041442   1.150926 (  1.195743)
-{:gender_eq=>"female"} |   1.002735   0.021413   1.024148 (  1.050490)
-{:gender_eq=>"male", :category_eq=>"realistic"} |   0.477078   0.006580   0.483658 (  0.495866)
-{:category_eq=>"anime"} |   0.950761   0.011559   0.962320 (  0.984603)
-{:gender_eq=>"male"} |   0.882380   0.009501   0.891881 (  0.915505)
-{:gender_eq=>"female"} |   0.880318   0.009786   0.890104 (  0.914882)
-{:gender_eq=>"male", :category_eq=>"realistic"} |   0.447910   0.004666   0.452576 (  0.467297)
-{:category_eq=>"anime"} |   0.910681   0.009483   0.920164 (  0.944995)
+{:gender_eq=>"male"} |   0.827936   0.008792   0.836728 (  0.860587)
+{:gender_eq=>"female"} |   0.820328   0.007736   0.828064 (  0.848825)
+{:gender_eq=>"male", :category_eq=>"realistic"} |   0.411889   0.003925   0.415814 (  0.427574)
+{:category_eq=>"anime"} |   0.820319   0.006855   0.827174 (  0.848593)
+{:gender_eq=>"male"} |   0.808111   0.008087   0.816198 (  0.838743)
+{:gender_eq=>"female"} |   0.821813   0.008320   0.830133 (  0.852781)
+{:gender_eq=>"male", :category_eq=>"realistic"} |   0.407616   0.003589   0.411205 (  0.423808)
+{:category_eq=>"anime"} |   0.836886   0.011420   0.848306 (  0.874967)
+
 
 
 Observations
